@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+  <constant name="struts.objectFactory" value="spring"></constant>
+
+  <package name="main" namespace="/" extends="struts-default">
+  		<action name="useraction_*" class="userAction" method="{1}">
+  			<result name="home">/jsp/home.jsp</result>
+			<result name="registerSuccess">/jsp/user/registerSuccess.jsp</result>
+			<result name="registerFail">/jsp/user/registerFail.jsp</result>
+			<result name="login">/jsp/user/login.jsp</result>
+			
+			<result name="recharging">/jsp/user/recharge.jsp</result>
+			<result name="recharge">/jsp/user/confirmRecharge.jsp</result>
+			<result name="rechargeSuccess">/jsp/user/myAccount.jsp</result>
+			<result name="rechargeFail">/jsp/user/confirmRecharge.jsp</result>
+			<result name="consumeRecord">/jsp/user/consumeRecord.jsp</result>
+			<result name="payFilm">/jsp/user/payFilm.jsp</result>
+			<result name="notLogined">/jsp/user/login.jsp</result>
+			<result name="myAccount">/jsp/user/myAccount.jsp</result>
+			<result name="rechargeRecord">/jsp/user/rechargeRecord.jsp</result>
+			<result name="joinActivity">/jsp/user/joinActivity.jsp</result>
+		</action>
+		
+		<action name="filmaction_*" class="filmAction" method="{1}">
+  			<result name="home">/jsp/home.jsp</result>
+			<result name="filmInfo">/jsp/film/filmInfo.jsp</result>
+			<result name="filmToAdd">/jsp/film/filmToAdd.jsp</result>
+			<result name="chooseSeat">/jsp/film/chooseSeat.jsp</result>
+			<result name="notLogined">/jsp/user/login.jsp</result>
+			<result name="myAccount" type="redirectAction">useraction_myAccount</result>
+		</action>
+		
+		<action name="waiteraction_*" class="waiterAction" method="{1}">
+  			<result name="login">/jsp/waiter/waiterLogin.jsp</result>
+  			<result name="makePlan">/jsp/waiter/makePlan.jsp</result>
+  			<result name="makeActivity">/jsp/waiter/makeActivity.jsp</result>
+  			<result name="showUser">/jsp/waiter/showUser.jsp</result>
+  			<result name="allUser" >/jsp/waiter/allUser.jsp</result>
+  			<result name="toAllUser" type="redirectAction">waiteraction_allUser</result>
+  			<result name="films">/jsp/waiter/films.jsp</result>
+  			<result name="filmInfo">/jsp/waiter/filmInfo.jsp</result>
+  			<result name="chooseSeat">/jsp/waiter/chooseSeat.jsp</result>
+		</action>
+		
+		<action name="manageaction_*" class="manageAction" method="{1}">
+  			<result name="login">/jsp/manage/manageLogin.jsp</result>
+  			<result name="{1}">/jsp/manage/{1}.jsp</result>
+		</action>
+		
+  </package>
+  
+ 	<!-- 用作action的ajax配置 -->
+	<package name="json" namespace="/json" extends="json-default">
+		<action name="ajaxAction_*" class="ajaxAction" method="{1}">
+			<result type="json" name="{1}">
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+		<action name="ajaxUserAction_*" class="ajaxUserAction" method="{1}">
+			<result type="json" name="{1}">
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+		<action name="ajaxFilmAction_*" class="ajaxFilmAction" method="{1}">
+			<result type="json" name="{1}">
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+	</package>
+</struts>    

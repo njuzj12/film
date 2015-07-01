@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+  <constant name="struts.objectFactory" value="spring"></constant>
+
+  <package name="main" namespace="/" extends="struts-default">
+    
+  </package>
+  
+ 	<!-- 用作action的ajax配置 -->
+	<package name="json" namespace="/json" extends="json-default">
+		<action name="ajaxAction_*" class="ajaxAction" method="{1}">
+			<result type="json" name="{1}">
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+		<action name="ajaxSamecsAction_*" class="ajaxSamecsAction"
+			method="{1}">
+			<result type="json" name="{1}">
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+	</package>
+</struts>    
