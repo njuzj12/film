@@ -207,6 +207,16 @@ public class FilmService {
 		this.userDAO = userDAO;
 	}
 
+	public int saveFilm(Film film) {
+		try {
+			filmDAO.save(film);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+		return 0;
+	}
+
 	
 
 	

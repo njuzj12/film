@@ -19,6 +19,7 @@
         <li><a href="waiteraction_makeActivity.action">制定活动</a></li>
         <li><a href="waiteraction_allUser.action">查看用户</a></li>
         <li><a href="waiteraction_films.action">购票</a></li>
+        <li><a href="waiteraction_addFilm.action">添加电影</a></li>
       </ul>
       <ul id="header_logout" class="nav navbar-nav navbar-right" >
         <li><a href="waiteraction_logout.action">退出</a></li>

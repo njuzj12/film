@@ -23,6 +23,15 @@ public class WaiterAction {
 	FilmService filmService;
 	UserService userService;
 	
+	public String addFilm(){
+		HttpServletRequest request = ServletActionContext.getRequest();    //获取request
+		Integer waiterId;
+		if ((waiterId=isLogined(request))==null){		//未登录
+			return "login";
+		}
+		return "addFilm";
+	}
+	
 	public String logout(){
 		HttpServletRequest request = ServletActionContext.getRequest();    //获取request
 		request.getSession().invalidate();
