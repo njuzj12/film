@@ -25,12 +25,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  		<%@ include file="/jsp/common/header.jsp"%>
+  		<jsp:include page="/jsp/common/header.jsp" flush="true">
+				<jsp:param name="module" value="index" />
+			</jsp:include>
   		<div class="row" style="margin-top:80px">
   			<div class="col-md-offset-4 col-md-6" style="font-size:30px">恭喜！注册成功. 您的Id号为&nbsp&nbsp&nbsp&nbsp<span style="color:#c00"><%=request.getAttribute("userId") %></span></div>
   		</div>
   		<div class="row" style="margin-top:20px">
-  			<div class="col-md-offset-4 col-md-4">你的账号尚未激活，某些功能无法使用</div>
+  			<div class="col-md-offset-4 col-md-4">你的账号尚未激活，某些功能无法使用，请充值来激活账户</div>
   		</div>
     	<div class="row" style="margin-top:80px">
     		<div class="col-md-offset-4 col-md-4">

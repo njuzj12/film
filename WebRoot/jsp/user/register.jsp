@@ -28,14 +28,16 @@
 </head>
 
 <body onload="ready_register()">
-	<%@ include file="/jsp/common/header.jsp"%>
+	<jsp:include page="/jsp/common/header.jsp" flush="true">
+				<jsp:param name="module" value="index" />
+			</jsp:include>
 	<div class="row" style="margin-top:80px">
 		<div class="col-md-offset-4 col-md-4">
 			<form id="signupForm" action="useraction_register.action"
 				method="post">
 				<div class="form-group">
-					<label for="账号">名称</label> <input type="text" class="form-control"
-						id="name" placeholder="输入名称" name="name">
+					<label for="账号">用户名</label> <input type="text" class="form-control"
+						id="name" placeholder="输入用户名" name="name" title="系统将自动为您分配ID">
 				</div>
 				<div class="form-group">
 					<label for="exampleInputPassword1">密码</label> <input

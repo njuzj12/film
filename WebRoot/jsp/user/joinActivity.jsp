@@ -24,7 +24,9 @@
 </head>
 
 <body>
-	<%@ include file="/jsp/common/header.jsp"%>
+	 <jsp:include page="/jsp/common/header.jsp" flush="true">
+				<jsp:param name="module" value="activity" />
+			</jsp:include>
 	<c:forEach var="question" items="${vo.questions}">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-3">${question.title}</div>

@@ -22,7 +22,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  		<%@ include file="/jsp/common/header.jsp"%>
+  		<jsp:include page="/jsp/common/header.jsp" flush="true">
+				<jsp:param name="module" value="index" />
+			</jsp:include>
     	注册失败<a href="jsp/register.jsp">返回</a> <br>
     	<%@ include file="/jsp/common/footer.jsp"%>
   </body>

@@ -27,7 +27,9 @@
 </head>
 
 <body>
-	<%@ include file="/jsp/common/header.jsp"%>
+	<jsp:include page="/jsp/common/header.jsp" flush="true">
+				<jsp:param name="module" value="buy" />
+			</jsp:include>
 	<div class="row">
 		<div class="col-md-offset-2 col-md-2">
 			<img src="${film.photo}" />
@@ -44,7 +46,7 @@
 			<p>类型：${film.type}</p>
 			<p>价格：${film.price}元</p>
 			<p>剧情:</p>
-			<p style="height: 178px; overflow:hidden;  text-overflow: ellipsis;"
+			<p style="height: 178px;  overflow:hidden;  text-overflow: ellipsis;"
 				class="homeInfo">${film.description}</p>
 		</div>
 	</div>
@@ -57,6 +59,23 @@
 		</div>
 	</div>
 	<div class="row" style="margin-top:80px">
+	<ul class="nav nav-pills" style="width:700px; margin-left:400px;margin-top:-50px;margin-bottom:50px;">
+	 	 <li>
+   		 <a href="#">购票流程</a>
+ 		 </li>
+ 		 <li>
+   		 <a href="#" role="button">选择影片 >></a>
+ 		 </li>
+ 		 <li  class="active">
+   		 <a href="#" role="button">选择放映计划 >></a>
+ 		 </li>
+ 		 <li>
+   		 <a href="#" role="button">选择座位 >></a>
+ 		 </li>
+ 		 <li>
+   		 <a href="#" role="button">确认付款 </a>
+ 		 </li>
+	</ul>
 		<div class="col-md-offset-4 col-md-4">
 			<label>选择日期：</label> <input id="playTime" type="text"
 				value="${dateString}" name="HBegtime" style="width: 150px"

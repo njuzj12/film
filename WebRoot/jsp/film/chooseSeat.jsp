@@ -92,7 +92,9 @@
 </head>
 
 <body>
-	<%@ include file="/jsp/common/header.jsp"%>
+	<jsp:include page="/jsp/common/header.jsp" flush="true">
+				<jsp:param name="module" value="buy" />
+			</jsp:include>
 
 	<div class="row" style="margin-top:20px;">
 		<div class="seats col-md-offset-2 col-md-6">

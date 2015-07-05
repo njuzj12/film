@@ -43,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<div class="row">
     			时长：${film.time}分钟
     		</div>
-    		<div class="row">
+    		<div class="row" >
     			剧情：${film.description}
     		</div>
     	</div>

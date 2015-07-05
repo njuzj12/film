@@ -55,7 +55,9 @@
 </head>
 
 <body>
-	<%@ include file="/jsp/common/header.jsp"%>
+	 <jsp:include page="/jsp/common/header.jsp" flush="true">
+				<jsp:param name="module" value="recharging" />
+			</jsp:include>
 	<form id="signupForm" method="get" action="useraction_recharging.action">
 		<p>
 			<label for="firstname">Firstname</label> <input id="firstname"

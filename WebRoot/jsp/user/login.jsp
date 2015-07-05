@@ -29,11 +29,14 @@
 		}
 		
 	}
+	
 </script>
 </head>
 
 <body onload="login_init()">
-	<%@ include file="/jsp/common/header.jsp"%>
+	 <jsp:include page="/jsp/common/header.jsp" flush="true">
+				<jsp:param name="module" value="index" />
+			</jsp:include>
 	<%
 		int status=-1;
 		if (request.getAttribute("status")!=null){
@@ -75,7 +78,7 @@
 					<label> <%=request.getAttribute("message") %> </label>
 				</div>
 				<%} %>
-				<button type="submit" class="btn btn-default">登陆</button>
+				<button type="submit" class="btn btn-default" title="按下回车登录">登陆</button>
 			</form>
 		</div>
 	</div>

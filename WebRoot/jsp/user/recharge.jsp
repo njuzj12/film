@@ -24,7 +24,9 @@
 </head>
 
 <body onload="ready_recharge()">
-	<%@ include file="/jsp/common/header.jsp"%>
+	 <jsp:include page="/jsp/common/header.jsp" flush="true">
+				<jsp:param name="module" value="recharging" />
+			</jsp:include>
 	<div class="container" style="margin-top:80px">
 		<div class="row">
 			<div class="col-md-offset-3 col-md-4">
@@ -33,18 +35,18 @@
 		</div>
 		<div class="col-md-offset-4 col-md-4">
 			<div class="form-group">
-				<label for="recharge">充值金额（元）</label> <input type="text"
-					class="form-control" id="recharge" name="recharge"
-					placeholder="输入金额">
-			</div>
-			<div class="form-group">
-				<label for="bankId">银行账号</label> <input type="text"
+				<label for="bankId"><i class="icon-folder-open-alt"></i>&nbsp;银行账号</label> <input type="text"
 					class="form-control" id="bankId" name="bankId" placeholder="输入账号">
 			</div>
 			<div class="form-group">
-				<label for="bankPass">银行密码</label> <input type="password"
+				<label for="bankPass"><i class="icon-key"></i>&nbsp;银行密码</label> <input type="password"
 					class="form-control" id="bankPass" name="password"
 					placeholder="输入密码">
+			</div>
+			<div class="form-group">
+				<label for="recharge"><i class="icon-money"></i>&nbsp;充值金额（元）</label> <input type="text"
+					class="form-control" id="recharge" name="recharge"
+					placeholder="充值200元以上即可激活账户">
 			</div>
 		</div>
 	</div>

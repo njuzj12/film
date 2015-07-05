@@ -18,7 +18,9 @@
   </head>
   
   <body>
-    <%@ include file="/jsp/common/header.jsp"%>
+    <jsp:include page="/jsp/common/header.jsp" flush="true">
+				<jsp:param name="module" value="index" />
+			</jsp:include>
      <div class="row"
 		style="margin-top:50px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(169, 169, 169);">
 		<div class="col-md-offset-2 col-md-1">

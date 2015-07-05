@@ -18,7 +18,9 @@
 </head>
 
 <body>
-	<%@ include file="/jsp/common/header.jsp"%>
+	 <jsp:include page="/jsp/common/header.jsp" flush="true">
+				<jsp:param name="module" value="account" />
+			</jsp:include>
 		<div class="row"
 		style="margin-top:50px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(169, 169, 169);">
 		<div class="col-md-offset-2 col-md-1">
@@ -29,17 +31,17 @@
 	</div>
 	<div class="row">
 		<div class="col-md-offset-3 col-md-2">
-			<p>姓名:<input id="name" style="width:150px;border:0" type="text" name="name" value="${user.name }" ></p>
-			<p>年龄:<input id="age" style="width:60px;border:0" type="text" name="name" value="${user.age}" ></p>
-			<p>Id:${user.userId}</p>
+			<p><span style="font-weight:bold">姓名:&nbsp;</span><input id="name"  style="width:150px;border:1px dotted black " type="text" name="name" value="${user.name }" ></p>
+			<p><span style="font-weight:bold">年龄:&nbsp;</span><input id="age" style="width:60px;border:1px dotted black" type="text" name="name" value="${user.age}" ></p>
+			<p><span style="font-weight:bold">Id:&nbsp;&nbsp;&nbsp;&nbsp;</span>${user.userId}</p>
 		</div>
 		<div class="col-md-offset-2 col-md-2">
-			<p>性别:<select id="sex">
+			<p><span style="font-weight:bold">性别:&nbsp;&nbsp;&nbsp;</span><select id="sex">
   					<option value ="0" <c:if test="${user.sex=='未选择'}">selected</c:if>>未选择</option>
   					<option value ="1" <c:if test="${user.sex=='男'}">selected</c:if>>男</option>
   					<option value="2" <c:if test="${user.sex=='女'}">selected</c:if>>女</option>
 				</select></p>
-			<p>居住地:<input id="place" style="width:60px;border:0" type="text" name="name" value="${user.place}" ></p>
+			<p><span style="font-weight:bold">居住地:</span><input id="place" style="width:60px;border:1px dotted black" type="text" name="name" value="${user.place}" ></p>
 		</div>
 	</div>
 	<div class="row">
@@ -59,7 +61,7 @@
 		<div class="col-md-offset-3 col-md-3">
 			<p>状态:<span style="font-weight:bold">${user.status }&nbsp&nbsp&nbsp<a href="javascript:void(0)" onclick="cancelUser()"><i class=" icon-remove-circle icon-large"></i>取消资格</a> </span></p>
 			<p>余额:<span id="money">${user.money }</span> &nbsp&nbsp&nbsp<a href="/cineplex/useraction_recharging.action"><i class="icon-shopping-cart icon-large"></i>去充值</a></p>
-			<p>积分:<span id="score">${user.score }</span> &nbsp&nbsp&nbsp<a href="javascript:void(0)" onclick="changeToMoney()"><i class="icon-money icon-large"></i>兑换余额</a> （<a href="/cineplex/jsp/user/rules.jsp" target="_blank">积分规则</a>）</p>
+			<p>积分:<span id="score"><input id="age" style="width:100px;border:1px dotted black" type="text" name="score" placeholder="当前积分${user.score }" ></span> &nbsp&nbsp&nbsp<a href="javascript:void(0)" onclick="changeToMoney()"><i class="icon-money icon-large"></i>兑换余额</a> （<a href="/cineplex/jsp/user/rules.jsp" target="_blank">积分规则</a>）</p>
 		</div>
 		<div class="col-md-offset-1 col-md-2">
 			<p>过期日期：${user.timeCount }</p>
